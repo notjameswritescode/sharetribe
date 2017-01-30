@@ -8,6 +8,10 @@
       .mobile-badge{:class => get_badge_class(unread_count)}
         = unread_count
 
+  = link_to watched_listings_path do
+    = icon_map_tag(icons, "star", ["icon-with-text"])
+    = t("header.watch_list")
+
   = link_to profile_path do
     = icon_map_tag(icons, "user", ["icon-with-text"])
     = t("header.profile")

@@ -20,6 +20,23 @@ window.ST = window.ST || {};
         text.html(actionError);
       });
     });
+
+    $('.watch-list-button').on('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      var el = $(this)
+      var method = el.data('method');
+
+      $.ajax({
+        url: el.attr('href'),
+        type: method
+      }).done(function(data) {
+        method = method === 'post' ? 'delete' : 'post';
+        el.data('method', method);
+        el.text(data.translation)
+      });
+    });
   };
 
   module.initializeQuantityValidation = function(opts) {

@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.6.32, for osx10.10 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for osx10.12 (x86_64)
 --
--- Host: 127.0.0.1    Database: sharetribe_development
+-- Host: localhost    Database: sharetribe_development
 -- ------------------------------------------------------
--- Server version	5.7.15-log
+-- Server version	5.7.17
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -1589,6 +1589,21 @@ CREATE TABLE `transactions` (
   KEY `index_transactions_on_listing_author_id` (`listing_author_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `watched_listings`
+--
+
+DROP TABLE IF EXISTS `watched_listings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `watched_listings` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `owner_id` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `listing_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -1599,7 +1614,7 @@ CREATE TABLE `transactions` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-11-08 14:13:02
+-- Dump completed on 2017-01-29 22:03:35
 INSERT INTO schema_migrations (version) VALUES ('20080806070738');
 
 INSERT INTO schema_migrations (version) VALUES ('20080807071903');
@@ -3219,4 +3234,6 @@ INSERT INTO schema_migrations (version) VALUES ('20161107132513');
 INSERT INTO schema_migrations (version) VALUES ('20161107141257');
 
 INSERT INTO schema_migrations (version) VALUES ('20161109094513');
+
+INSERT INTO schema_migrations (version) VALUES ('20170130014433');
 

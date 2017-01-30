@@ -231,7 +231,8 @@ class ListingsController < ApplicationController
       manage_availability_props: manage_availability_props(@current_community, @listing),
       availability_enabled: availability_enabled,
       blocked_dates_result: blocked_dates_result,
-      blocked_dates_end_on: DateUtils.to_midnight_utc(blocked_dates_end_on)
+      blocked_dates_end_on: DateUtils.to_midnight_utc(blocked_dates_end_on),
+      watched_listings: @current_user ? @current_user.watched_listings.pluck(:listing_id) : []
     }
 
     Analytics.record_event(

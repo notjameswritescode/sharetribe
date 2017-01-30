@@ -136,6 +136,14 @@
               %span.listing-price-quantity
                 = text
 
+    - if @current_user && @current_user != @listing.author
+      .row-with-divider
+        .col-12
+          - if watched_listings.include?(@listing.id)
+            = link_to t(".watching"), watched_listings_path(listing_id: @listing.id), :method => :delete, class: "watch-list-button"
+          - else
+            = link_to t(".watch"), watched_listings_path(listing_id: @listing.id), :method => :post, class: "watch-list-button"
+
     .row-with-divider
       .col-12
         #listing-message-links

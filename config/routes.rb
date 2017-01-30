@@ -338,6 +338,8 @@ Kassi::Application.routes.draw do
       end
     end
 
+    resource :watched_listings, :only => [:show, :create, :destroy]
+
     resources :listing_images do
       member do
         get :image_status

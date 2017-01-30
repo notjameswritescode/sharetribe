@@ -1016,6 +1016,7 @@ en:
     login: "Log in"
     signup: "Sign up"
     menu: Menu
+    watch_list: "Watch List"
   homepage:
     additional_private_listings_slate:
       additionally_one_private_offer_exists: "Additionally  there is <b>one other offer</b>,"
@@ -1314,6 +1315,7 @@ en:
       you_must_log_in_to_change_profile_settings: "You must log in to %{service_name} to change profile settings"
       you_must_log_in_to_accept_or_reject: "You must log in to accept or reject the transaction"
       you_must_log_in_to_confirm_or_cancel: "You must log in to cancel or confirm the transaction"
+      you_musT_log_in_to_manage_watched_listings: "You must log in to manage your watched listings."
       you_need_to_confirm_your_account_first: "You need to confirm your email."
       you_must_fill_all_the_fields: "You must fill all the fields"
       you_unfollowed_listing: "You are no longer following this listing"
@@ -1328,6 +1330,8 @@ en:
         one: "The website will be offline for maintenance in %{count} minute"
         other: "The website will be offline for maintenance in %{count} minutes"
       automatically_logged_out_please_sign_in: "You have been automatically logged out. Please log in again."
+      watch_added: "You are now watching %{name}."
+      watch_removed: "You have stopped watching %{name}."
     settings:
       account: Account
       notifications: Notifications
@@ -1541,6 +1545,8 @@ en:
     reply_link:
       listing_closed: "Listing is closed"
     show:
+      watch: "Add to Watch List"
+      watching: "Remove from Watch List"
       add_your_phone_number: "Add your phone number"
       add_profile_picture: "Add profile picture"
       comments: "Public discussion"

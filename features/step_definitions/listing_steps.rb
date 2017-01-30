@@ -169,3 +169,7 @@ When(/^I select subcategory "(.*?)"$/) do |subcategory_name|
   expect(page).to have_css(".select", text: subcategory_name)
   first(".select", text: subcategory_name).click
 end
+
+Then(/^I am watching "(.*?)"$/) do |listing_name|
+  @current_user.watched_listings.create(listing: @listing)
+end
